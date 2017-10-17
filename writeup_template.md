@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 
 ---
 
@@ -31,16 +31,16 @@ The goals / steps of this project are the following:
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+### Writeup / README
 
 You're reading it! and here is a link to my [project code](https://github.com/mathia/SDC-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 I used the Numpy library to calculate summary statistics of the traffic
 signs data set:
@@ -51,7 +51,7 @@ signs data set:
 * The shape of a traffic sign image is 32 x 32 x 3
 * The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset.
+#### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set.
 Below is an example image for each of the 43 classes of signs.
@@ -63,9 +63,9 @@ Histograms of the number of images for each sign class were generated for the tr
 ![Validation Histogram][image3]
 ![Test Histogram][image4]
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 The above histograms show the traing data set has some classes with significantly more examples than others.  To prevent the training data from biasing the model towards the classes that are more prevelent, I augmented the training data set by generating new training examples for underrepresented classes.  The new images were synthesized by rotating, translating and perspective warping images from the original training data set by small random amounts.  Any class that had less than 750 images in the original training set was augmented to bring it to 750 images.
 
@@ -74,7 +74,7 @@ The above histograms show the traing data set has some classes with significantl
 All input image data has the color channel values normalized to improve the optimizers performance during training.  The goal was to make the pixel values for each color channel have a zero mean and unit variance but for simplicity's sake the actually mean was not calculated from the training set values, it was assumed to be 128 as the color range is 0-255.  All data sets were randomly shuffled as the supplied data sets were ordered by sign class.
 
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
@@ -96,11 +96,11 @@ My final model consisted of the following layers:
  
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used the Adam optimizer.  I did not adjust the learning rate as the Adam varies the learning rate as part of the algorithm and I found my initial values of 0.001 seemed to work well.  The batch size is 128 and 25 epochs were used during the final training run.  I found that more epochs did not help performance on the validation set.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of 99.2%
@@ -129,9 +129,9 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are six German traffic signs that I found on the web:
 
@@ -139,7 +139,7 @@ Here are six German traffic signs that I found on the web:
 
 These might be difficult to classify because they are more closely zoomed in than the training data images.  Also, while these images are more easily distinguished to the human eye than the training images (brighter, less noise), the fact that they are different from the training data might give the model trouble.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
@@ -154,7 +154,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83%. This compares favorably to the accuracy on the test set of 94%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 All of the prodictions show very high probability (> 98%) for the predicted sign ID, even the one that is incorrect.  The incorrect classification does have the correct ID as the 2nd most likely, but it is only 1%.
 
@@ -256,6 +256,6 @@ Image #5
      Sign ID: 11
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
