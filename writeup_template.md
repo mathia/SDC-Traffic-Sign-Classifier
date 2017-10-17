@@ -158,102 +158,39 @@ The model was able to correctly guess 5 of the 6 traffic signs, which gives an a
 
 All of the prodictions show very high probability (> 98%) for the predicted sign ID, even the one that is incorrect.  The incorrect classification does have the correct ID as the 2nd most likely, but it is only 1%.
 
-Image #0
-  logit ranked #1:
-     Probablity: 0.9962067604064941
-     Sign ID: 15
-  logit ranked #2:
-     Probablity: 0.0016332280356436968
-     Sign ID: 32
-  logit ranked #3:
-     Probablity: 0.0011647774372249842
-     Sign ID: 13
-  logit ranked #4:
-     Probablity: 0.000438211573055014
-     Sign ID: 39
-  logit ranked #5:
-     Probablity: 0.00023985384905245155
-     Sign ID: 26
-Image #1
-  logit ranked #1:
-     Probablity: 0.9884748458862305
-     Sign ID: 0
-  logit ranked #2:
-     Probablity: 0.011522348038852215
-     Sign ID: 1
-  logit ranked #3:
-     Probablity: 2.528830464143539e-06
-     Sign ID: 28
-  logit ranked #4:
-     Probablity: 3.891424285029643e-07
-     Sign ID: 27
-  logit ranked #5:
-     Probablity: 2.7704800231731497e-08
-     Sign ID: 24
-Image #2
-  logit ranked #1:
-     Probablity: 0.9997001886367798
-     Sign ID: 35
-  logit ranked #2:
-     Probablity: 0.00013589684385806322
-     Sign ID: 34
-  logit ranked #3:
-     Probablity: 6.764916179236025e-05
-     Sign ID: 33
-  logit ranked #4:
-     Probablity: 5.426889401860535e-05
-     Sign ID: 36
-  logit ranked #5:
-     Probablity: 3.834455128526315e-05
-     Sign ID: 37
-Image #3
-  logit ranked #1:
-     Probablity: 1.0
-     Sign ID: 37
-  logit ranked #2:
-     Probablity: 3.967610094635088e-12
-     Sign ID: 40
-  logit ranked #3:
-     Probablity: 5.068698824377271e-13
-     Sign ID: 39
-  logit ranked #4:
-     Probablity: 2.494627226144741e-14
-     Sign ID: 33
-  logit ranked #5:
-     Probablity: 7.266077285287971e-20
-     Sign ID: 35
-Image #4
-  logit ranked #1:
-     Probablity: 0.9999974966049194
-     Sign ID: 22
-  logit ranked #2:
-     Probablity: 2.502274583093822e-06
-     Sign ID: 29
-  logit ranked #3:
-     Probablity: 3.472740983667677e-09
-     Sign ID: 26
-  logit ranked #4:
-     Probablity: 6.826916809643535e-11
-     Sign ID: 25
-  logit ranked #5:
-     Probablity: 3.3514751846160096e-13
-     Sign ID: 15
-Image #5
-  logit ranked #1:
-     Probablity: 0.9999996423721313
-     Sign ID: 18
-  logit ranked #2:
-     Probablity: 4.168192617726163e-07
-     Sign ID: 27
-  logit ranked #3:
-     Probablity: 1.4886928356716567e-09
-     Sign ID: 26
-  logit ranked #4:
-     Probablity: 3.319242864114805e-16
-     Sign ID: 24
-  logit ranked #5:
-     Probablity: 9.225707705999131e-19
-     Sign ID: 11
+| Image		        |  Probability Rank	|  Probability		| Sign Class	|
+|:---------------------:|:---------------------:|:---------------------:|:-------------:|
+| Image #1		| 1 			| 0.9962		| 15		|
+| Image #1		| 2 			| 0.0016		| 32		|
+| Image #1		| 3 			| 0.0012		| 13		|
+| Image #1		| 4 			| 0.0004		| 39		|
+| Image #1		| 5 			| 0.0002		| 26		|
+| Image #2		| 1 			| 0.9885		| 0		|
+| Image #2		| 2 			| 0.0115		| 1		|
+| Image #2		| 3 			| 0.0000		| 28		|
+| Image #2		| 4 			| 0.0000                | 27		|
+| Image #2		| 5 			| 0.0000                | 24		|
+| Image #3		| 1 			| 0.9997		| 35		|
+| Image #3		| 2 			| 0.0001		| 34		|
+| Image #3		| 3 			| 0.0000		| 33		|
+| Image #3		| 4 			| 0.0000		| 36		|
+| Image #3		| 5 			| 0.0000		| 37		|
+| Image #4		| 1 			| 1.0000		| 37		|
+| Image #4		| 2 			| 0.0000                | 40		|
+| Image #4		| 3 			| 0.0000                | 39		|
+| Image #4		| 4 			| 0.0000                | 33		|
+| Image #4		| 5 			| 0.0000                | 35		|
+| Image #5		| 1 			| 1.0000		| 22		|
+| Image #5		| 2 			| 0.0000                | 29		|
+| Image #5		| 3 			| 0.0000                | 26		|
+| Image #5		| 4 			| 0.0000                | 25		|
+| Image #5		| 5 			| 0.0000                | 15		|
+| Image #6		| 1 			| 1.0000		| 18		|
+| Image #6		| 2 			| 0.0000                | 27		|
+| Image #6		| 3 			| 0.0000                | 26		|
+| Image #6		| 4 			| 0.0000                | 24		|
+| Image #6		| 5 			| 0.0000                | 11		|
+
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
